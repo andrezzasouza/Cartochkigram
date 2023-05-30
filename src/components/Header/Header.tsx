@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
+import { pacifico } from "../../app/fonts";
 
 export default function Header({ children }: PropsWithChildren) {
   const Header = styled.header`
@@ -15,7 +16,7 @@ export default function Header({ children }: PropsWithChildren) {
   `;
 
   return (
-    <Header>
+    <Header className={pacifico.className}>
       <p>Карточкиграм</p>
       {children}
     </Header>

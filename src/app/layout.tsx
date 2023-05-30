@@ -1,11 +1,5 @@
-import { NextFont } from "next/dist/compiled/@next/font";
 import "./globals.css";
-import { Pacifico } from "next/font/google";
-
-const pacifico: NextFont = Pacifico({
-  weight: "400",
-  subsets: ["cyrillic", "latin-ext"],
-});
+import { nunito } from "./fonts";
 
 export const metadata = {
   title: "Карточкиграм",
@@ -19,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={pacifico.className}>
+      <body className={nunito.className}>
         {children}
       </body>
     </html>
