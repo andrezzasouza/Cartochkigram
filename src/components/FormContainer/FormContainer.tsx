@@ -1,7 +1,15 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
-const ContainerComponent = styled.section`
+export default function FormContainer({ children }: PropsWithChildren) {
+  return(
+    <FormContainerComponent>
+      {children}
+    </FormContainerComponent>
+  );
+}
+
+const FormContainerComponent = styled.section`
   position: absolute;
   bottom: 0;
   left: calc((100vw - 715px) * 1.22);
@@ -14,12 +22,3 @@ const ContainerComponent = styled.section`
   padding: 5px 60px 50px;
   color: #000000;
 `;
-
-
-export default function FormContainer({ children }: PropsWithChildren) {
-  return(
-    <ContainerComponent>
-      {children}
-    </ContainerComponent>
-  );
-}

@@ -3,7 +3,7 @@
 import Header from "../../components/Header/Header";
 import FormContainer from "../../components/FormContainer/FormContainer";
 import styled from "styled-components";
-import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginForm from "../../components/LogInForm/LogInForm";
 
 const LoginPage = styled.main`
   background-color: #32476f;
@@ -25,19 +25,14 @@ const LoginImage = styled.img`
 
 export default function Login() {
   return (
-    <>
-      <Header>
-        <span>exemple</span>
-      </Header>
-      <LoginPage>
-        <LoginImage
-          src="https://media.istockphoto.com/id/941440378/pt/foto/college-friends-study-for-exam.jpg?s=1024x1024&w=is&k=20&c=vNsGDl4QueCILJJb2zPyYCPOqpOhhTAxpI0VCaWgGO4="
-          alt="Three girls studying with flashcards"
-        />
-        <FormContainer>
-          <LoginForm />
-        </FormContainer>
-      </LoginPage>
-    </>
+    <LoginPage>
+      <LoginImage
+        src="https://media.istockphoto.com/id/941440378/pt/foto/college-friends-study-for-exam.jpg?s=1024x1024&w=is&k=20&c=vNsGDl4QueCILJJb2zPyYCPOqpOhhTAxpI0VCaWgGO4="
+        alt="Three girls studying with flashcards"
+      />
+      <FormContainer>
+        <LoginForm />
+      </FormContainer>
+    </LoginPage>
   );
 }
