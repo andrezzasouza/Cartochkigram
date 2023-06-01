@@ -1,18 +1,8 @@
 import styled from "styled-components";
-import { EnvelopeOpen, Password } from "@phosphor-icons/react";
+import { EnvelopeOpen, Password, NotePencil, Question } from "@phosphor-icons/react";
 import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
 import MoreInfo from "../MoreInfo/MoreInfo";
-
-const DataInput = styled.input`
-  width: 100%;
-  height: 30px;
-  background-color: #d4dbe8;
-  border: 2px solid #32476f;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 0 0 10px;
-  color: #32476f;
-`;
+import InputContainer from "../InputContainer/InputContainer";
 
 const EntryHeader = styled.h2`
   font-size: 30px;
@@ -22,29 +12,19 @@ const EntryHeader = styled.h2`
 `;
 
 const FormButton = styled.button`
-  margin: 5px 0 25px 0;
+  margin: 5px 0;
   background-color: #ffffff;
   border: 2px solid #32476f;
   border-radius: 20px;
   padding: 2px 10px;
   color: #32476f;
-  width: 50%;
+  width: 100%;
   transition: 0.5s ease-in-out;
 
   &:hover {
     background-color: #32476f;
     border: 2px solid #32476f;
     color: #ffffff;
-  }
-`;
-
-const InputLabelContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  label {
-    display: flex;
-    flex-direction: row;
-    gap: 0 3px;
   }
 `;
 
@@ -61,26 +41,39 @@ const inputFields = [
   },
 ];
 
+
+
 export default function LogInForm() {
+  const itemsArray = [
+    {
+      element: <NotePencil size={28} weight="duotone" />,
+      description: "Crie sua conta!",
+    },
+    {
+      element: <Question size={28} weight="duotone" />,
+      description: "Saiba mais!",
+    },
+  ];
+
   return (
     <>
       <EntryHeader>Добро пожаловать!</EntryHeader>
       <h3>Faça o login com seu e-mail e senha:</h3>
       {inputFields.map((field, index) => (
-        <InputLabelContainer key={index}>
-          <label>
-            {field.element}
-            {field.name}
-          </label>
-          <DataInput placeholder={field.name} type={field.type} />
-        </InputLabelContainer>
+        <InputContainer
+          key={`login-input-${index}`}
+          element={field.element}
+          placeholder={field.name}
+          type={field.type}
+        />
       ))}
       <FormButton type="submit">Entrar!</FormButton>
+      <p>Esqueceu sua senha?</p>
       <AlternativeEntry
         alternativeHeading={"Ou faça seu login de outra forma:"}
       />
       <EntryHeader>Sua primeira vez aqui?</EntryHeader>
-      <MoreInfo />
+      <MoreInfo itemsArray={itemsArray} />
     </>
   );
 }

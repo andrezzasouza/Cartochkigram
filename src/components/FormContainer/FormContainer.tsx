@@ -10,10 +10,12 @@ export default function FormContainer({ children }: PropsWithChildren) {
 }
 
 const FormContainerComponent = styled.section`
-  position: absolute;
-  bottom: 0;
-  left: calc((100vw - 715px) * 1.22);
-  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: calc(100% - 50px);
+  margin-top: 50px;
+  max-width: 500px;
   transform: translateX(-50px);
   background: #fafafa;
   border: 3px solid #32476f;

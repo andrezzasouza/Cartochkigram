@@ -1,18 +1,24 @@
+import { JSX } from "react";
 import styled from "styled-components";
-import { Question, NotePencil } from "@phosphor-icons/react";
 import LogoButton from "../LogoButton/LogoButton";
 
-export default function MoreInfo() {
+interface IItemsObject {
+  element: JSX.Element,
+  description: string
+}
+
+interface IItemsArray {
+  itemsArray: IItemsObject[]
+}
+export default function MoreInfo({ itemsArray }: IItemsArray) {
   return (
     <AlternativeLogin>
-      <LogoButton>
-        <NotePencil size={28} weight="duotone" />
-        Crie sua conta!
-      </LogoButton>
-      <LogoButton>
-        <Question size={28} weight="duotone" />
-        Saiba mais!
-      </LogoButton>
+      {itemsArray.map((item, index) => (
+        <LogoButton key={`logo-button-${index}`}>
+          {item.element}
+          {item.description}
+        </LogoButton>
+      ))}
     </AlternativeLogin>
   );
 }

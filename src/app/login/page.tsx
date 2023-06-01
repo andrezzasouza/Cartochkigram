@@ -1,27 +1,8 @@
 "use client";
 
-import Header from "../../components/Header/Header";
-import FormContainer from "../../components/FormContainer/FormContainer";
 import styled from "styled-components";
+import FormContainer from "../../components/FormContainer/FormContainer";
 import LoginForm from "../../components/LogInForm/LogInForm";
-
-const LoginPage = styled.main`
-  background-color: #32476f;
-  min-height: calc(100vh - 50px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  inset: 0 0 0 0;
-`;
-
-const LoginImage = styled.img`
-  width: 715px;
-  border-radius: 20px 20px 0 20px;
-  position: absolute;
-  bottom: 85px;
-  left: calc((100vw - 715px) / 5.5);
-`;
 
 export default function Login() {
   return (
@@ -36,3 +17,18 @@ export default function Login() {
     </LoginPage>
   );
 }
+
+const LoginPage = styled.main`
+  background-color: #32476f;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0 0 0 0;
+`;
+
+const LoginImage = styled.img`
+  width: 715px;
+  border-radius: 20px 20px 0 20px;
+`;
