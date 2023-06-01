@@ -8,30 +8,31 @@ import {
 import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
 import MoreInfo from "../MoreInfo/MoreInfo";
 import InputContainer from "../InputContainer/InputContainer";
-import Link from "next/link";
+import FormButton from "../FormButton/FormButton";
 
-const EntryHeader = styled.h2`
-  font-size: 30px;
-  margin: 40px 0 10px 0;
+const EntryHeading = styled.h2`
+  font-size: 32px;
+  margin: 30px 0 10px;
   color: #32476f;
   font-weight: 800;
 `;
 
-const FormButton = styled.button`
-  margin: 5px 0;
-  background-color: #ffffff;
-  border: 2px solid #32476f;
-  border-radius: 20px;
-  padding: 2px 10px;
-  color: #32476f;
-  width: 100%;
-  transition: 0.5s ease-in-out;
+const ResetPwd = styled.p`
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+  color: #6088d2;
 
   &:hover {
-    background-color: #32476f;
-    border: 2px solid #32476f;
-    color: #ffffff;
+    color: #32476f;
   }
+`;
+
+const Description = styled.p`
+  margin: 10px 0 15px;
+  font-weight: 700;
+  font-size: 17px;
 `;
 
 const inputFields = [
@@ -39,11 +40,13 @@ const inputFields = [
     name: "E-mail",
     element: <EnvelopeOpen size={20} color="#32476F" weight="duotone" />,
     type: "e-mail",
+    required: true,
   },
   {
     name: "Senha",
     element: <Password size={20} color="#32476F" weight="duotone" />,
     type: "password",
+    required: true,
   },
 ];
 
@@ -52,19 +55,19 @@ export default function LogInForm() {
     {
       element: <NotePencil size={28} weight="duotone" />,
       description: "Crie sua conta!",
-      address: "/signup"
+      address: "/signup",
     },
     {
       element: <Question size={28} weight="duotone" />,
       description: "Saiba mais!",
-      address: "/"
+      address: "/",
     },
   ];
 
   return (
     <>
-      <EntryHeader>Добро пожаловать!</EntryHeader>
-      <h3>Faça o login com seu e-mail e senha:</h3>
+      <EntryHeading>Добро пожаловать!</EntryHeading>
+      <Description>Faça o login com seu e-mail e senha:</Description>
       <form onSubmit={() => console.log("signup")}>
         {inputFields.map((field, index) => (
           <InputContainer
@@ -72,15 +75,18 @@ export default function LogInForm() {
             element={field.element}
             placeholder={field.name}
             type={field.type}
+            required={field.required}
           />
         ))}
         <FormButton>Entrar!</FormButton>
       </form>
-      <p>Esqueceu sua senha?</p>
+      <ResetPwd onClick={() => alert("Resetar senha!")}>
+        Esqueceu sua senha? Clique aqui!
+      </ResetPwd>
       <AlternativeEntry
         alternativeHeading={"Ou faça seu login de outra forma:"}
       />
-      <EntryHeader>Sua primeira vez aqui?</EntryHeader>
+      <EntryHeading>Sua primeira vez aqui?</EntryHeading>
       <MoreInfo itemsArray={itemsArray} />
     </>
   );

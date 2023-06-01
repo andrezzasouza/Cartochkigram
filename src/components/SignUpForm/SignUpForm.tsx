@@ -20,31 +20,37 @@ export default function SignUpForm() {
       name: "Nome no alfabeto latino",
       type: "string",
       element: <TextAa size={20} color="#32476F" weight="duotone" />,
+      required: true,
     },
     {
       name: "Nome no alfabeto cirílico",
       type: "string",
       element: <Pi size={20} color="#32476F" weight="duotone" />,
+      required: false,
     },
     {
       name: "E-mail",
       type: "e-mail",
       element: <EnvelopeOpen size={20} color="#32476F" weight="duotone" />,
+      required: true,
     },
     {
       name: "Aniversário",
       type: "date",
       element: <Cake size={20} color="#32476F" weight="duotone" />,
+      required: false,
     },
     {
       name: "Senha",
       type: "password",
       element: <Password size={20} color="#32476F" weight="duotone" />,
+      required: true,
     },
     {
       name: "Confirmação da senha",
       type: "password",
       element: <ShieldCheck size={20} color="#32476F" weight="duotone" />,
+      required: true,
     },
   ];
 
@@ -71,6 +77,7 @@ export default function SignUpForm() {
             element={field.element}
             placeholder={field.name}
             type={field.type}
+            required={field.required}
           />
         ))}
         <FormButton>Criar conta!</FormButton>

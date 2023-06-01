@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { pacifico } from "@/app/fonts";
+import LogoTitle from "../LogoTitle/LogoTitle";
 
 const SplashBackground = styled.div`
   background-color: #32476f;
@@ -12,16 +12,10 @@ const SplashBackground = styled.div`
   justify-content: center;
 `;
 
-const SplashTitle = styled.p`
-  font-size: 100px;
-  color: #ffffff;
-  text-shadow: 0px 4px 1px rgba(255, 255, 255, 0.59);
-`;
-
 export default function SplashScreen() {
   return (
     <SplashBackground>
-      <SplashTitle className={pacifico.className}>Карточкиграм</SplashTitle>
+      <LogoTitle textSize={"100px"} />
     </SplashBackground>
   );
 }

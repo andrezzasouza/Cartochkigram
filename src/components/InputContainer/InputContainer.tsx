@@ -5,12 +5,14 @@ interface IInputContainer {
   placeholder: string;
   element: JSX.Element;
   type: string;
+  required: boolean;
 }
 
 export default function InputContainer({
   placeholder,
   element,
   type,
+  required
 }: IInputContainer) {
   return (
     <InputLabelContainer>
@@ -18,7 +20,7 @@ export default function InputContainer({
         {element}
         {placeholder}
       </label>
-      <StyledInput placeholder={placeholder} type={type} />
+      <StyledInput placeholder={placeholder} type={type} required={required} />
     </InputLabelContainer>
   );
 }
