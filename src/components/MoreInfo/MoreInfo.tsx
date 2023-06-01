@@ -1,23 +1,27 @@
 import { JSX } from "react";
 import styled from "styled-components";
 import LogoButton from "../LogoButton/LogoButton";
+import Link from "next/link";
 
 interface IItemsObject {
-  element: JSX.Element,
-  description: string
+  element: JSX.Element;
+  description: string;
+  address: string;
 }
 
 interface IItemsArray {
-  itemsArray: IItemsObject[]
+  itemsArray: IItemsObject[];
 }
 export default function MoreInfo({ itemsArray }: IItemsArray) {
   return (
     <AlternativeLogin>
       {itemsArray.map((item, index) => (
-        <LogoButton key={`logo-button-${index}`}>
-          {item.element}
-          {item.description}
-        </LogoButton>
+        <Link href={item.address} key={`logo-button-${index}`}>
+          <LogoButton>
+            {item.element}
+            {item.description}
+          </LogoButton>
+        </Link>
       ))}
     </AlternativeLogin>
   );

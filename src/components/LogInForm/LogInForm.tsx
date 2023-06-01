@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { EnvelopeOpen, Password, NotePencil, Question } from "@phosphor-icons/react";
+import {
+  EnvelopeOpen,
+  Password,
+  NotePencil,
+  Question,
+} from "@phosphor-icons/react";
 import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
 import MoreInfo from "../MoreInfo/MoreInfo";
 import InputContainer from "../InputContainer/InputContainer";
+import Link from "next/link";
 
 const EntryHeader = styled.h2`
   font-size: 30px;
@@ -41,17 +47,17 @@ const inputFields = [
   },
 ];
 
-
-
 export default function LogInForm() {
   const itemsArray = [
     {
       element: <NotePencil size={28} weight="duotone" />,
       description: "Crie sua conta!",
+      address: "/signup"
     },
     {
       element: <Question size={28} weight="duotone" />,
       description: "Saiba mais!",
+      address: "/"
     },
   ];
 
@@ -59,15 +65,17 @@ export default function LogInForm() {
     <>
       <EntryHeader>Добро пожаловать!</EntryHeader>
       <h3>Faça o login com seu e-mail e senha:</h3>
-      {inputFields.map((field, index) => (
-        <InputContainer
-          key={`login-input-${index}`}
-          element={field.element}
-          placeholder={field.name}
-          type={field.type}
-        />
-      ))}
-      <FormButton type="submit">Entrar!</FormButton>
+      <form onSubmit={() => console.log("signup")}>
+        {inputFields.map((field, index) => (
+          <InputContainer
+            key={`login-input-${index}`}
+            element={field.element}
+            placeholder={field.name}
+            type={field.type}
+          />
+        ))}
+        <FormButton>Entrar!</FormButton>
+      </form>
       <p>Esqueceu sua senha?</p>
       <AlternativeEntry
         alternativeHeading={"Ou faça seu login de outra forma:"}

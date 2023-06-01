@@ -12,6 +12,7 @@ import {
   SignIn,
   Question,
 } from "@phosphor-icons/react";
+import FormButton from "../FormButton/FormButton";
 
 export default function SignUpForm() {
   const inputFields = [
@@ -51,16 +52,18 @@ export default function SignUpForm() {
     {
       element: <SignIn size={28} weight="duotone" />,
       description: "Faça seu login!",
+      address: "/login",
     },
     {
       element: <Question size={28} weight="duotone" />,
       description: "Saiba mais!",
+      address: "/",
     },
   ];
 
   return (
     <>
-      <EntryHeader>Sua primeira vez aqui?</EntryHeader>
+      <EntryHeader>Crie sua conta aqui!</EntryHeader>
       <form onSubmit={() => console.log("signup")}>
         {inputFields.map((field, index) => (
           <InputContainer
@@ -70,6 +73,7 @@ export default function SignUpForm() {
             type={field.type}
           />
         ))}
+        <FormButton>Criar conta!</FormButton>
       </form>
       <AlternativeEntry
         alternativeHeading={"Ou crie sua conta de outra forma:"}

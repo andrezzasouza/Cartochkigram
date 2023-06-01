@@ -1,11 +1,8 @@
+import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
-interface IFormButton {
-  contents: string;
-}
-
-export default function FormButton({ contents }: IFormButton) {
-  return <StyledButton type="submit">{contents}</StyledButton>;
+export default function FormButton({ children }: PropsWithChildren) {
+  return <StyledButton type="submit">{children}</StyledButton>;
 }
 
 const StyledButton = styled.button`
