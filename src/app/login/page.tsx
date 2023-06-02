@@ -4,12 +4,15 @@ import styled from "styled-components";
 import FormContainer from "../../components/FormContainer/FormContainer";
 import LoginForm from "../../components/LogInForm/LogInForm";
 import LogoTitle from "../../components/LogoTitle/LogoTitle";
+import Link from "next/link";
 
 export default function Login() {
   return (
     <LoginPage>
       <section>
-        <LogoTitle textSize={"75px"} />
+        <Link href="/">
+          <LogoTitle textSize={"75px"} />
+        </Link>
         <LoginImage
           src="https://media.istockphoto.com/id/941440378/pt/foto/college-friends-study-for-exam.jpg?s=1024x1024&w=is&k=20&c=vNsGDl4QueCILJJb2zPyYCPOqpOhhTAxpI0VCaWgGO4="
           alt="Three girls studying with flashcards"

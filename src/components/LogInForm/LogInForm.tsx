@@ -9,6 +9,7 @@ import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
 import MoreInfo from "../MoreInfo/MoreInfo";
 import InputContainer from "../InputContainer/InputContainer";
 import FormButton from "../FormButton/FormButton";
+import { useState, FormEvent } from "react";
 
 const EntryHeading = styled.h2`
   font-size: 32px;
@@ -17,16 +18,23 @@ const EntryHeading = styled.h2`
   font-weight: 800;
 `;
 
-const ResetPwd = styled.p`
+const ResetPwd = styled.span`
   margin-top: 5px;
-  cursor: pointer;
+  display: inline-block;
   font-size: 13px;
-  text-align: center;
   color: #6088d2;
+  width: fit-content;
+  text-align: center;
 
   &:hover {
     color: #32476f;
+    cursor: pointer;
   }
+`;
+
+const ResetContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const Description = styled.p`
@@ -35,40 +43,60 @@ const Description = styled.p`
   font-size: 17px;
 `;
 
-const inputFields = [
+
+
+const itemsArray = [
   {
-    name: "E-mail",
-    element: <EnvelopeOpen size={20} color="#32476F" weight="duotone" />,
-    type: "e-mail",
-    required: true,
+    element: <NotePencil size={28} weight="duotone" />,
+    description: "Crie sua conta!",
+    address: "/signup",
   },
   {
-    name: "Senha",
-    element: <Password size={20} color="#32476F" weight="duotone" />,
-    type: "password",
-    required: true,
+    element: <Question size={28} weight="duotone" />,
+    description: "Saiba mais!",
+    address: "/",
   },
 ];
 
 export default function LogInForm() {
-  const itemsArray = [
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [disabled, setDisabled] = useState<boolean>(false);
+
+  const inputFields = [
     {
-      element: <NotePencil size={28} weight="duotone" />,
-      description: "Crie sua conta!",
-      address: "/signup",
+      name: "E-mail",
+      element: <EnvelopeOpen size={20} color="#32476F" weight="duotone" />,
+      type: "e-mail",
+      required: true,
+      value: email,
+      setter: setEmail
     },
     {
-      element: <Question size={28} weight="duotone" />,
-      description: "Saiba mais!",
-      address: "/",
+      name: "Senha",
+      element: <Password size={20} color="#32476F" weight="duotone" />,
+      type: "password",
+      required: true,
+      value: password,
+      setter: setPassword
     },
   ];
+
+  function logIn(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setDisabled(true);
+    const body = {
+      email,
+      password
+    }
+    alert("Login");
+  }
 
   return (
     <>
       <EntryHeading>Добро пожаловать!</EntryHeading>
       <Description>Faça o login com seu e-mail e senha:</Description>
-      <form onSubmit={() => console.log("signup")}>
+      <form onSubmit={logIn}>
         {inputFields.map((field, index) => (
           <InputContainer
             key={`login-input-${index}`}
@@ -76,13 +104,18 @@ export default function LogInForm() {
             placeholder={field.name}
             type={field.type}
             required={field.required}
+            value={field.value}
+            setter={field.setter}
+            disabled={disabled}
           />
         ))}
         <FormButton>Entrar!</FormButton>
       </form>
-      <ResetPwd onClick={() => alert("Resetar senha!")}>
-        Esqueceu sua senha? Clique aqui!
-      </ResetPwd>
+      <ResetContainer>
+        <ResetPwd onClick={() => alert("Resetar senha!")}>
+          Esqueceu sua senha? Clique aqui!
+        </ResetPwd>
+      </ResetContainer>
       <AlternativeEntry
         alternativeHeading={"Ou faça seu login de outra forma:"}
       />

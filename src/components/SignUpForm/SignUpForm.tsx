@@ -13,44 +13,67 @@ import {
   Question,
 } from "@phosphor-icons/react";
 import FormButton from "../FormButton/FormButton";
+import { FormEvent, useState } from "react";
+import { setMaxIdleHTTPParsers } from "http";
 
 export default function SignUpForm() {
+
+  const [latinName, setLatinName] = useState<string>('');
+  const [cyrillicName, setCyrillicName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [birthdate, setBirthdate] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [repeatedPassword, setRepeatedPassword] = useState<string>('');
+  const [disabled, setDisabled] = useState<boolean>(false);
+
   const inputFields = [
     {
       name: "Nome no alfabeto latino",
       type: "string",
       element: <TextAa size={20} color="#32476F" weight="duotone" />,
       required: true,
+      value: latinName,
+      setter: setLatinName,
     },
     {
       name: "Nome no alfabeto cirílico",
       type: "string",
       element: <Pi size={20} color="#32476F" weight="duotone" />,
       required: false,
+      value: cyrillicName,
+      setter: setCyrillicName,
     },
     {
       name: "E-mail",
       type: "e-mail",
       element: <EnvelopeOpen size={20} color="#32476F" weight="duotone" />,
       required: true,
+      value: email,
+      setter: setEmail,
     },
     {
       name: "Aniversário",
       type: "date",
       element: <Cake size={20} color="#32476F" weight="duotone" />,
       required: false,
+      value: birthdate,
+      setter: setBirthdate,
     },
     {
       name: "Senha",
       type: "password",
       element: <Password size={20} color="#32476F" weight="duotone" />,
       required: true,
+      value: password,
+      setter: setPassword,
     },
     {
       name: "Confirmação da senha",
       type: "password",
       element: <ShieldCheck size={20} color="#32476F" weight="duotone" />,
       required: true,
+      value: repeatedPassword,
+      setter: setRepeatedPassword,
     },
   ];
 
@@ -67,10 +90,24 @@ export default function SignUpForm() {
     },
   ];
 
+    function signUp(e: FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+      setDisabled(true);
+      const body = {
+        latinName,
+        cyrillicName,
+        email,
+        birthdate,
+        password,
+        repeatedPassword
+      };
+      alert("SignUp");
+    }
+
   return (
     <>
       <EntryHeader>Crie sua conta aqui!</EntryHeader>
-      <form onSubmit={() => console.log("signup")}>
+      <form onSubmit={signUp}>
         {inputFields.map((field, index) => (
           <InputContainer
             key={`login-input-${index}`}
@@ -78,6 +115,9 @@ export default function SignUpForm() {
             placeholder={field.name}
             type={field.type}
             required={field.required}
+            value={field.value}
+            setter={field.setter}
+            disabled={disabled}
           />
         ))}
         <FormButton>Criar conta!</FormButton>

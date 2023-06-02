@@ -29,5 +29,6 @@ export default function MoreInfo({ itemsArray }: IItemsArray) {
 
 const AlternativeLogin = styled.section`
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
+  /* justify-content: space-between; */
 `;
