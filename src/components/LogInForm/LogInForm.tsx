@@ -91,6 +91,13 @@ export default function LogInForm() {
     alert("Login");
   }
 
+  function checkLogInData() {
+    // check e-mail format
+    if (password.length < 8) {
+      alert("Sua senha deve ter pelo menos 8 caracteres!");
+    }
+  }
+
   return (
     <>
       <EntryHeading>Добро пожаловать!</EntryHeading>

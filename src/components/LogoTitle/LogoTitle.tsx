@@ -17,8 +17,9 @@ export default function LogoTitle({ textSize }: ITexttSize) {
   );
 }
 
-const StyledLogo = styled.p<Pick<ITitleProps, "textSize">>`
+const StyledLogo = styled.span<Pick<ITitleProps, "textSize">>`
   font-size: ${(props) => props.textSize};
   color: #ffffff;
   text-shadow: 0px 4px 1px rgba(255, 255, 255, 0.59);
+  width: fit-content;
 `;

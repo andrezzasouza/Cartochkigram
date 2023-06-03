@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "../components/Header/Header";
+import CarouselComponent from "../components/Carousel/Carousel";
 
 export default function Lp() {
   return (
@@ -8,7 +9,9 @@ export default function Lp() {
       <Header>
         <nav></nav>
       </Header>
-      <main></main>
+      <main>
+        <CarouselComponent />
+      </main>
     </>
   );
 }

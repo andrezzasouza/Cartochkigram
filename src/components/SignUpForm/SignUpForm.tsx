@@ -105,6 +105,22 @@ export default function SignUpForm() {
       alert("SignUp");
     }
 
+    function checkSignUpData() {
+      if (latinName.length < 2) {
+        alert("Seu nome deve conter pelo menos 2 caracteres");
+      }
+      // check latin alphabet
+      // check russian alphabet
+      // check birthdate range
+      // check e-mail format
+      if (password.length < 8) {
+        alert("Sua senha deve ter pelo menos 8 caracteres!");
+      }
+      if (repeatedPassword !== password) {
+        alert("A senha e a confirmação da senha devem ser iguais!");
+      }
+    }
+
   return (
     <>
       <EntryHeader>Crie sua conta aqui!</EntryHeader>

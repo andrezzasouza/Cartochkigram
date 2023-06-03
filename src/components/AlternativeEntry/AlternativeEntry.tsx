@@ -8,12 +8,12 @@ interface IAltEntry {
 export default function AlternativeEntry({ alternativeHeading }: IAltEntry) {
   const buttonInfo = [
     {
-      element: <Facebook size={28} weight="duotone" />,
-      description: "Facebook",
-    },
-    {
       element: <Google size={28} weight="duotone" />,
       description: "Google",
+    },
+    {
+      element: <Facebook size={28} weight="duotone" />,
+      description: "Facebook",
     },
     {
       element: <Github size={28} weight="duotone" />,
@@ -64,6 +64,7 @@ const Github = styled(GithubLogo)`
 
 const AlternativeEntryway = styled.section`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0 0 5px;
 `;

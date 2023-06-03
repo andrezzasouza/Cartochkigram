@@ -12,7 +12,6 @@ function ButtonLoading() {
     <div className="sweet-loading">
       <PropagateLoader
         color={'#fff'}
-        // loading={loading}
         cssOverride={override}
         size={15}
         aria-label="Loading Spinner"

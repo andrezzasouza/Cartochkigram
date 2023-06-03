@@ -13,6 +13,7 @@ export default function SignUp() {
         <Link href="/">
           <LogoTitle textSize={"75px"} />
         </Link>
+        <LeftSignUpContent></LeftSignUpContent>
       </section>
       <FormContainer>
         <SignUpForm></SignUpForm>
@@ -24,4 +25,10 @@ export default function SignUp() {
 const SignUpPage = styled.main`
   background-color: #32476f;
   display: flex;
+  justify-content: center;
+`;
+
+const LeftSignUpContent = styled.div`
+  width: 715px;
+  background-color: #ffffff;
 `;
