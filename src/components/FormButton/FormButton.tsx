@@ -1,19 +1,37 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
-export default function FormButton({ children }: PropsWithChildren) {
-  return <StyledButton type="submit">{children}</StyledButton>;
+interface IFormButton extends PropsWithChildren {
+  disabledStyle: boolean;
 }
 
-const StyledButton = styled.button`
+export default function FormButton({ children, disabledStyle }: IFormButton) {
+  return (
+    <StyledButton
+      type="submit"
+      disabledStyle={disabledStyle}
+      disabled={disabledStyle}
+    >
+      {children}
+    </StyledButton>
+  );
+}
+
+const StyledButton = styled.button<Pick<IFormButton, "disabledStyle">>`
   margin: 5px 0;
   background-color: #32476f;
   border: 2px solid #32476f;
   border-radius: 20px;
-  padding: 2px 10px;
+  padding: 5px 10px;
   color: #ffffff;
   width: 100%;
   transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 37px;
+  opacity: ${(props) => (props.disabledStyle ? 0.75 : 1)};
+  cursor: ${(props) => (props.disabledStyle ? "wait" : "auto")};
 
   &:hover {
     background-color: #0f2854;

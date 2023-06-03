@@ -10,6 +10,7 @@ import MoreInfo from "../MoreInfo/MoreInfo";
 import InputContainer from "../InputContainer/InputContainer";
 import FormButton from "../FormButton/FormButton";
 import { useState, FormEvent } from "react";
+import ButtonLoading from "../../components/ButtonLoading/ButtonLoading";
 
 const EntryHeading = styled.h2`
   font-size: 32px;
@@ -43,8 +44,6 @@ const Description = styled.p`
   font-size: 17px;
 `;
 
-
-
 const itemsArray = [
   {
     element: <NotePencil size={28} weight="duotone" />,
@@ -59,8 +58,8 @@ const itemsArray = [
 ];
 
 export default function LogInForm() {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [disabled, setDisabled] = useState<boolean>(false);
 
   const inputFields = [
@@ -70,7 +69,7 @@ export default function LogInForm() {
       type: "e-mail",
       required: true,
       value: email,
-      setter: setEmail
+      setter: setEmail,
     },
     {
       name: "Senha",
@@ -78,7 +77,7 @@ export default function LogInForm() {
       type: "password",
       required: true,
       value: password,
-      setter: setPassword
+      setter: setPassword,
     },
   ];
 
@@ -87,8 +86,8 @@ export default function LogInForm() {
     setDisabled(true);
     const body = {
       email,
-      password
-    }
+      password,
+    };
     alert("Login");
   }
 
@@ -109,7 +108,9 @@ export default function LogInForm() {
             disabled={disabled}
           />
         ))}
-        <FormButton>Entrar!</FormButton>
+        <FormButton disabledStyle={disabled}>
+          {disabled ? <ButtonLoading /> : "Entrar!"}
+        </FormButton>
       </form>
       <ResetContainer>
         <ResetPwd onClick={() => alert("Resetar senha!")}>

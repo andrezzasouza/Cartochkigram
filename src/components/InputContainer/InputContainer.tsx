@@ -55,6 +55,7 @@ const StyledInput = styled.input<Pick<IInputProps, "disabledStyle">>`
   margin: 0 0 10px;
   color: ${(props) => (props.disabledStyle ? "#d4dbe8" : "#32476f")};
   opacity: ${(props) => (props.disabledStyle ? 0.75 : 1)};
+  cursor: ${(props) => (props.disabledStyle ?  "wait ": "auto")};
 `;
 
 const InputLabelContainer = styled.div`

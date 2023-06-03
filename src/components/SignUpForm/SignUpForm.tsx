@@ -15,6 +15,7 @@ import {
 import FormButton from "../FormButton/FormButton";
 import { FormEvent, useState } from "react";
 import { setMaxIdleHTTPParsers } from "http";
+import ButtonLoading from "../ButtonLoading/ButtonLoading";
 
 export default function SignUpForm() {
 
@@ -120,7 +121,7 @@ export default function SignUpForm() {
             disabled={disabled}
           />
         ))}
-        <FormButton>Criar conta!</FormButton>
+        <FormButton disabledStyle={disabled}>{disabled ? <ButtonLoading /> : "Criar conta!"}</FormButton>
       </form>
       <AlternativeEntry
         alternativeHeading={"Ou crie sua conta de outra forma:"}
