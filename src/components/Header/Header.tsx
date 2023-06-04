@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 import { pacifico } from "../../app/fonts";
+import LogoTitle from "../LogoTitle/LogoTitle";
 
 export default function Header({ children }: PropsWithChildren) {
   const Header = styled.header`
@@ -13,11 +14,12 @@ export default function Header({ children }: PropsWithChildren) {
     padding: 0 25px;
     font-size: 20px;
     color: #ffffff;
+    box-sizing: border-box;
   `;
 
   return (
     <Header className={pacifico.className}>
-      <p>Карточкиграм</p>
+      <LogoTitle textSize="20px" />
       {children}
     </Header>
   );

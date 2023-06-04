@@ -14,14 +14,13 @@ import ButtonLoading from "../../components/ButtonLoading/ButtonLoading";
 
 const EntryHeading = styled.h2`
   font-size: 32px;
-  margin: 30px 0 10px;
+  margin: 30px 0 15px;
   color: #32476f;
   font-weight: 800;
 `;
 
 const ResetPwd = styled.span`
   margin-top: 5px;
-  display: inline-block;
   font-size: 13px;
   color: #6088d2;
   width: fit-content;
@@ -38,8 +37,8 @@ const ResetContainer = styled.div`
   justify-content: center;
 `;
 
-const Description = styled.p`
-  margin: 10px 0 15px;
+const Description = styled.h3`
+  margin: 15px 0 20px;
   font-weight: 700;
   font-size: 17px;
 `;

@@ -28,16 +28,22 @@ export default function Login() {
 const LoginPage = styled.main`
   background-color: #32476f;
   min-height: calc(100vh - 50px);
+  max-width: 1190px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   inset: 0 0 0 0;
+
+  & > section:first-of-type {
+    max-width: 715px;
+    margin: 30px 0 0;
+  }
 `;
 
 const LoginImage = styled.img`
   width: 715px;
   border-radius: 20px 20px 0 20px;
-  margin: 35px 0 
-  35px;
+  margin: 50px 0 30px;
 `;

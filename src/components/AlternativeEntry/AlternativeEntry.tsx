@@ -38,7 +38,7 @@ export default function AlternativeEntry({ alternativeHeading }: IAltEntry) {
 const StyledHeading3 = styled.h3`
   font-weight: 700;
   font-size: 17px;
-  margin: 25px 0 5px;
+  margin: 35px 0 5px;
 `;
 
 const Facebook = styled(FacebookLogo)`
@@ -66,5 +66,5 @@ const AlternativeEntryway = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 0 5px;
+  margin: 0 0 20px;
 `;

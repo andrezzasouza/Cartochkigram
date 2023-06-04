@@ -26,6 +26,13 @@ const SignUpPage = styled.main`
   background-color: #32476f;
   display: flex;
   justify-content: center;
+  max-width: 1190px;
+  margin: 0 auto;
+
+  & > section:first-of-type {
+    max-width: 715px;
+    margin: 30px 0 0;
+  }
 `;
 
 const LeftSignUpContent = styled.div`

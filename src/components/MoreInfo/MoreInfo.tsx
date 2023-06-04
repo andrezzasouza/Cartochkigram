@@ -30,5 +30,4 @@ export default function MoreInfo({ itemsArray }: IItemsArray) {
 const AlternativeLogin = styled.section`
   display: flex;
   gap: 15px;
-  /* justify-content: space-between; */
 `;

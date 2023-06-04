@@ -22,9 +22,8 @@ export default function InputContainer({
   required,
   value,
   setter,
-  disabled
+  disabled,
 }: IInputContainer) {
-
   return (
     <InputLabelContainer>
       <label htmlFor={`${placeholder}Field`}>
@@ -55,16 +54,19 @@ const StyledInput = styled.input<Pick<IInputProps, "disabledStyle">>`
   margin: 0 0 10px;
   color: ${(props) => (props.disabledStyle ? "#d4dbe8" : "#32476f")};
   opacity: ${(props) => (props.disabledStyle ? 0.75 : 1)};
-  cursor: ${(props) => (props.disabledStyle ?  "wait ": "auto")};
+  cursor: ${(props) => (props.disabledStyle ? "wait " : "auto")};
+  font-size: 16px;
 `;
 
 const InputLabelContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 2px;
   label {
     display: flex;
     flex-direction: row;
     gap: 0 3px;
     align-items: center;
+    margin-bottom: 2px;
   }
 `;

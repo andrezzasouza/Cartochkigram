@@ -15,6 +15,8 @@ const LogoInButton = styled.button`
   padding: 2px 8px 2px 4px;
   color: #32476f;
   transition: 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
 
   &:hover {
     background-color: #32476f;

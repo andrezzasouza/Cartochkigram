@@ -29,7 +29,6 @@ const CarouselComponent = () => (
   <Carousel
     showThumbs={false}
     showStatus={false}
-    dynamicHeight={true}
     infiniteLoop
     autoPlay
   >

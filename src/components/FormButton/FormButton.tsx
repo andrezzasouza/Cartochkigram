@@ -32,6 +32,7 @@ const StyledButton = styled.button<Pick<IFormButton, "disabledStyle">>`
   min-height: 37px;
   opacity: ${(props) => (props.disabledStyle ? 0.75 : 1)};
   cursor: ${(props) => (props.disabledStyle ? "wait" : "pointer")};
+  font-size: 16px;
 
   &:hover {
     background-color: #0f2854;

@@ -2,6 +2,7 @@
 
 import Header from "../components/Header/Header";
 import CarouselComponent from "../components/Carousel/Carousel";
+import { styled } from "styled-components";
 
 export default function Lp() {
   return (
@@ -10,8 +11,14 @@ export default function Lp() {
         <nav></nav>
       </Header>
       <main>
-        <CarouselComponent />
+        <CarouselContainer>
+          <CarouselComponent />
+        </CarouselContainer>
       </main>
     </>
   );
 }
+
+const CarouselContainer = styled.div`
+  padding: 0 10px;
+`;
