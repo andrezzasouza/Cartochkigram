@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import Header from "../../components/Header/Header";
 import LoggedInSideHeader from "../../components/LoggedInSideHeader/LoggedInSideHeader";
+import { SquaresFour } from "@phosphor-icons/react";
 
 export default function Home() {
   const [splash, setSplash] = useState(true);
@@ -18,7 +19,12 @@ export default function Home() {
       {!splash && (
         <>
           <Header>
-            <LoggedInSideHeader />
+            <LoggedInSideHeader
+              thirdIcon={
+                <SquaresFour size={32} color="#ffffff" weight="duotone" />
+              }
+              logoLink={"/dashboard"}
+            />
           </Header>
           <main></main>
         </>

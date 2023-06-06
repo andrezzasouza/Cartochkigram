@@ -6,7 +6,7 @@ import LogoTitle from "../LogoTitle/LogoTitle";
 export default function Header({ children }: PropsWithChildren) {
   const Header = styled.header`
     width: 100%;
-    height: 50px;
+    height: 55px;
     background-color: #32476f;
     display: flex;
     justify-content: space-between;
