@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 import LogoButton from "@/components/LogoButton/LogoButton";
 import { Chalkboard, HouseLine } from "@phosphor-icons/react";
 import Link from "next/link";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 interface IErrorFlashcard {
   background: string;

@@ -2,7 +2,7 @@
 
 import Header from "../components/Header/Header";
 import CarouselComponent from "../components/Carousel/Carousel";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import LogoButton from "@/components/LogoButton/LogoButton";
 import { NotePencil, SignIn } from "@phosphor-icons/react";
 import Link from "next/link";

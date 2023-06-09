@@ -2,8 +2,8 @@
 
 import ResetStyles from "@/styles/ResetStyles";
 import GlobalStyles from "@/styles/GlobalStyles";
-import { nunito } from "./fonts";
 import StyledComponentsRegistry from "./lib/registry";
+import { nunito } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -19,7 +19,7 @@ export default function RootLayout({
           content="Aprenda russo de flashcard em flashcard"
         ></meta>
       </head>
-      <ResetStyles />
+      <ResetStyles />     
       <GlobalStyles />
       <body className={nunito.className}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>

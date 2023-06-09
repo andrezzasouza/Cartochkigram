@@ -1,3 +1,4 @@
+import { nunito } from "@/app/fonts";
 import { Dispatch, JSX } from "react";
 import styled from "styled-components";
 
@@ -31,6 +32,7 @@ export default function InputContainer({
         {placeholder}
       </label>
       <StyledInput
+        className={nunito.className}
         placeholder={placeholder}
         type={type}
         required={required}
@@ -47,15 +49,19 @@ export default function InputContainer({
 const StyledInput = styled.input<Pick<IInputProps, "disabledStyle">>`
   width: 100%;
   height: 30px;
-  background-color: ${(props) => (props.disabledStyle ? "#32476f" : "#d4dbe8")};
   border: 2px solid #32476f;
   border-radius: 20px;
   padding: 5px 10px;
   margin: 0 0 10px;
-  color: ${(props) => (props.disabledStyle ? "#d4dbe8" : "#32476f")};
-  opacity: ${(props) => (props.disabledStyle ? 0.75 : 1)};
   cursor: ${(props) => (props.disabledStyle ? "wait " : "auto")};
+  color: ${(props) => (props.disabledStyle ? "#e8f1fe" : "#32476f")};
+  opacity: ${(props) => (props.disabledStyle ? 0.5 : 1)};
+  background-color: ${(props) =>
+    props.disabledStyle ? "#32476f" : "#e8f1fe"};
   font-size: 16px;
+  &::placeholder {
+    color: #818790;
+  }
 `;
 
 const InputLabelContainer = styled.div`

@@ -1,8 +1,9 @@
+import { nunito } from "@/app/fonts";
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
 export default function LogoButton({ children }: PropsWithChildren) {
-  return <LogoInButton>{children}</LogoInButton>;
+  return <LogoInButton className={nunito.className}>{children}</LogoInButton>;
 }
 
 const LogoInButton = styled.button`

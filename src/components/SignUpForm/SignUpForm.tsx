@@ -11,21 +11,55 @@ import {
   TextAa,
   SignIn,
   Question,
+  Student,
 } from "@phosphor-icons/react";
 import FormButton from "../FormButton/FormButton";
 import { FormEvent, useState } from "react";
-import { setMaxIdleHTTPParsers } from "http";
 import ButtonLoading from "../ButtonLoading/ButtonLoading";
+import SelectOptions from "../SelectOptions/SelectOptions";
 
 export default function SignUpForm() {
-
-  const [latinName, setLatinName] = useState<string>('');
-  const [cyrillicName, setCyrillicName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [birthdate, setBirthdate] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [repeatedPassword, setRepeatedPassword] = useState<string>('');
+  const [level, setLevel] = useState<string>("");
+  const [latinName, setLatinName] = useState<string>("");
+  const [cyrillicName, setCyrillicName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [birthdate, setBirthdate] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [repeatedPassword, setRepeatedPassword] = useState<string>("");
   const [disabled, setDisabled] = useState<boolean>(false);
+
+  const selectData = {
+    labelTitle: "Qual é seu nível atual de russo?",
+    iconElement: <Student size={20} color="#32476f" weight="duotone" />,
+    id: "level-select",
+    labelId: "level-select-label",
+    variable: level,
+    setVariable: setLevel,
+    width: "342.05px",
+    disabled: disabled,
+    options: [
+      {
+        optionName: "Nunca vi nada de russo.",
+        optionValue: "zero",
+      },
+      {
+        optionName: "Só sei o alfabeto e umas palavras soltas.",
+        optionValue: "abvgues",
+      },
+      {
+        optionName: "Sei frases e palavras, mas não consigo me comunicar.",
+        optionValue: "slova",
+      },
+      {
+        optionName: "Consigo me comunicar de forma básica.",
+        optionValue: "kagdila",
+      },
+      {
+        optionName: "Já me comunico bem, mas quero praticar mais",
+        optionValue: "yagovariu",
+      },
+    ],
+  };
 
   const inputFields = [
     {
@@ -91,40 +125,44 @@ export default function SignUpForm() {
     },
   ];
 
-    function signUp(e: FormEvent<HTMLFormElement>) {
-      e.preventDefault();
-      setDisabled(true);
-      const body = {
-        latinName,
-        cyrillicName,
-        email,
-        birthdate,
-        password,
-        repeatedPassword
-      };
-      alert("SignUp");
-    }
+  function signUp(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setDisabled(true);
+    const body = {
+      level,
+      latinName,
+      cyrillicName,
+      email,
+      birthdate,
+      password,
+      repeatedPassword,
+    };
+  }
 
-    function checkSignUpData() {
-      if (latinName.length < 2) {
-        alert("Seu nome deve conter pelo menos 2 caracteres");
-      }
-      // check latin alphabet
-      // check russian alphabet
-      // check birthdate range
-      // check e-mail format
-      if (password.length < 8) {
-        alert("Sua senha deve ter pelo menos 8 caracteres!");
-      }
-      if (repeatedPassword !== password) {
-        alert("A senha e a confirmação da senha devem ser iguais!");
-      }
+  function checkSignUpData() {
+    if (latinName.length < 2) {
+      alert("Seu nome deve conter pelo menos 2 caracteres");
     }
+    // check latin alphabet
+    // check russian alphabet
+    // check birthdate range
+    // check e-mail format
+    if (password.length < 8) {
+      alert("Sua senha deve ter pelo menos 8 caracteres!");
+    }
+    if (repeatedPassword !== password) {
+      alert("A senha e a confirmação da senha devem ser iguais!");
+    }
+    if (level === "") {
+      alert("É necessário escolher seu nível no idioma.");
+    }
+  }
 
   return (
     <>
       <EntryHeader>Crie sua conta aqui!</EntryHeader>
       <form onSubmit={signUp}>
+        <SelectOptions selectData={selectData} />
         {inputFields.map((field, index) => (
           <InputContainer
             key={`login-input-${index}`}
@@ -137,7 +175,9 @@ export default function SignUpForm() {
             disabled={disabled}
           />
         ))}
-        <FormButton disabledStyle={disabled}>{disabled ? <ButtonLoading /> : "Criar conta!"}</FormButton>
+        <FormButton disabledStyle={disabled}>
+          {disabled ? <ButtonLoading /> : "Criar conta!"}
+        </FormButton>
       </form>
       <AlternativeEntry
         alternativeHeading={"Ou crie sua conta de outra forma:"}

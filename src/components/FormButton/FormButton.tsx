@@ -1,3 +1,4 @@
+import { nunito } from "@/app/fonts";
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
 
@@ -8,6 +9,7 @@ interface IFormButton extends PropsWithChildren {
 export default function FormButton({ children, disabledStyle }: IFormButton) {
   return (
     <StyledButton
+      className={nunito.className}
       type="submit"
       disabledStyle={disabledStyle}
       disabled={disabledStyle}
