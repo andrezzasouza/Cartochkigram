@@ -15,6 +15,11 @@ export default function Header({ children }: PropsWithChildren) {
     font-size: 20px;
     color: #ffffff;
     box-sizing: border-box;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 1px 4px #000000;
   `;
 
   return (
