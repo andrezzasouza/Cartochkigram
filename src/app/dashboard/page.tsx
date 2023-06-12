@@ -6,11 +6,14 @@ import LoggedInSideHeader from "@/components/LoggedInSideHeader/LoggedInSideHead
 import { HouseLine } from "@phosphor-icons/react";
 import styled from "styled-components";
 import { nunito, pacifico } from "../fonts";
+import { useState } from "react";
 
 export default function Dashboard() {
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <DashboardContainer>
-      <Header>
+      <Header placement="internal" open={open} setOpen={setOpen}>
         <>
           <LoggedInSideHeader
             thirdIcon={<HouseLine size={28} color="#fafafa" weight="duotone" />}
@@ -19,7 +22,7 @@ export default function Dashboard() {
         </>
       </Header>
       <DashboardMain className={nunito.className}>
-        <Sidebar />
+        <Sidebar open={open} />
         <h2 className={pacifico.className}>Что нового?</h2>
         <p>Fique por dentro do que há de novo pra você!</p>
         {/* grid layout */}
@@ -29,9 +32,9 @@ export default function Dashboard() {
 }
 
 const DashboardContainer = styled.main`
-  background-color:#fafafa;
+  background-color: #fafafa;
   min-height: calc(100vh);
-`
+`;
 
 const DashboardMain = styled.main`
   display: flex;

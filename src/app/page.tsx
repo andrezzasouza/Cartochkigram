@@ -23,7 +23,7 @@ const itemsArray = [
 export default function Lp() {
   return (
     <>
-      <Header>
+      <Header placement="external">
         <LPNavBar>
           {itemsArray.map((item, index) => (
             <Link href={item.address} key={`logo-button-${index}`}>
