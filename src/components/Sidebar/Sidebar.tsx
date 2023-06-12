@@ -1,3 +1,4 @@
+import Popover from "@mui/material/Popover/Popover";
 import {
   BookOpenText,
   Cards,
@@ -7,13 +8,13 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components";
+import SidebarIconGroup from "../SidebarIconGroup/SidebarIconGroup";
 
 interface IIconDescription {
   open: boolean;
 }
 
 export default function Sidebar({ open }) {
-
   const sidebarIconsList = [
     {
       icon: <BookOpenText size={32} weight="duotone" />,
@@ -41,12 +42,13 @@ export default function Sidebar({ open }) {
     <SidebarNav open={open}>
       <div>
         {sidebarIconsList.map((item) => (
-          <Link href={item.address} key={item.description}>
-            <IconContainer>
-              {item.icon}
-              <IconDescription open={open}>{item.description}</IconDescription>
-            </IconContainer>
-          </Link>
+          <SidebarIconGroup
+            key={`sidebar-icon-${item.description.toLowerCase()}`}
+            open={open}
+            icon={item.icon}
+            description={item.description}
+            address={item.address}
+          />
         ))}
       </div>
     </SidebarNav>
@@ -63,28 +65,11 @@ const SidebarNav = styled.nav<Pick<IIconDescription, "open">>`
   color: #fafafa;
   width: ${(props) => (props.open ? "fit-content" : "55px")};
   margin: 55px 0 0;
-  padding: ${props => props.open ? "20px 20px 20px 11px": "20px 0"};
+  padding: ${(props) => (props.open ? "20px 7px" : "20px 0")};
   & > div {
     display: flex;
     flex-direction: column;
     align-items: ${(props) => (props.open ? "flex-start" : "center")};
     gap: 35px 0;
-  }
-`;
-
-const IconDescription = styled.p<Pick<IIconDescription, "open">>`
-  display: ${props => props.open ? "initial" : "none"};
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 4px;
-  gap: 0 10px;
-  color: #fafafa;
-  &:hover {
-    border-radius: 3px;
-    background-color: #fafafa;
-    color: #32476f;
   }
 `;
