@@ -6,10 +6,6 @@ import { Chalkboard, HouseLine } from "@phosphor-icons/react";
 import Link from "next/link";
 import styled from "styled-components";
 
-interface IErrorFlashcard {
-  background: string;
-}
-
 export default function NotFound() {
   return (
     <>

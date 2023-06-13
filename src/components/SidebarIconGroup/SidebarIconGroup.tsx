@@ -35,6 +35,7 @@ export default function SidebarIconGroup({ address, description, open, icon }) {
         anchorEl={anchorEl}
         setAnchorEl={setAnchorEl}
         itemDescription={description}
+        openSidebar={open}
       />
     </>
   );
@@ -50,11 +51,10 @@ const IconContainer = styled.div<Pick<IIconDescription, "open">>`
   padding: 4px;
   gap: 0 10px;
   color: #fafafa;
+  border-radius: 3px;
   width: ${(props) => (props.open ? "135px" : "100%")};
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out,
-    border-radius 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   &:hover {
-    border-radius: 3px;
     background-color: #fafafa;
     color: #32476f;
   }

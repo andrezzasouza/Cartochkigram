@@ -5,6 +5,7 @@ export default function MouseOverPopover({
   anchorEl,
   setAnchorEl,
   itemDescription,
+  openSidebar,
 }) {
   const handlePopoverClose = () => {
     setAnchorEl(null);
@@ -13,27 +14,31 @@ export default function MouseOverPopover({
   const open = Boolean(anchorEl);
 
   return (
-    <Popover
-      id="mouse-over-popover"
-      sx={{
-        pointerEvents: "none",
-        marginLeft: 1.5,
-      }}
-      open={open}
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "center",
-        horizontal: "right",
-      }}
-      transformOrigin={{
-        vertical: "center",
-        horizontal: "left",
-      }}
-      onClose={handlePopoverClose}
-      disableRestoreFocus
-    >
-      <ItemDescription>{itemDescription}</ItemDescription>
-    </Popover>
+    <>
+      {!openSidebar && (
+        <Popover
+          id="mouse-over-popover"
+          sx={{
+            pointerEvents: "none",
+            marginLeft: 1.5,
+          }}
+          open={open}
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: "center",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "center",
+            horizontal: "left",
+          }}
+          onClose={handlePopoverClose}
+          disableRestoreFocus
+        >
+          <ItemDescription>{itemDescription}</ItemDescription>
+        </Popover>
+      )}
+    </>
   );
 }
 

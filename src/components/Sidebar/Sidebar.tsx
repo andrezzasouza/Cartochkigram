@@ -60,9 +60,9 @@ const SidebarNav = styled.nav<Pick<IIconDescription, "open">>`
   bottom: 0;
   background-color: #32476f;
   color: #fafafa;
-  width: ${(props) => (props.open ? "fit-content" : "55px")};
+  width: ${(props) => (props.open ? "fit-content" : "60px")};
   margin: 55px 0 0;
-  padding: ${(props) => (props.open ? "20px 7px" : "20px 0")};
+  padding: ${(props) => (props.open ? "20px 10px" : "20px 0")};
   & > div {
     display: flex;
     flex-direction: column;

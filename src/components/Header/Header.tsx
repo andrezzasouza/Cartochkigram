@@ -41,7 +41,7 @@ const StyledHeader = styled.header<Pick<IHeader, "placement">>`
   justify-content: space-between;
   align-items: center;
   padding: ${(props) =>
-    props.placement === "internal" ? "0 25px 0 10px" : "0 25px"};
+    props.placement === "internal" ? "0 25px 0 15px" : "0 25px"};
   font-size: 20px;
   color: #ffffff;
   box-sizing: border-box;
