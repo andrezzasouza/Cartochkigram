@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import styled from "styled-components";
-import LogoButton from "../LogoButton/LogoButton";
+import LogoButton from "@/components/LogoButton/LogoButton";
 import Link from "next/link";
 
 interface IItemsObject {

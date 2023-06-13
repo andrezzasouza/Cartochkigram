@@ -1,9 +1,9 @@
 "use client";
 
 import styled from "styled-components";
-import FormContainer from "../../components/FormContainer/FormContainer";
-import LoginForm from "../../components/LogInForm/LogInForm";
-import LogoTitle from "../../components/LogoTitle/LogoTitle";
+import FormContainer from "@/components/FormContainer/FormContainer";
+import LoginForm from "@/components/LogInForm/LogInForm";
+import LogoTitle from "@/components/LogoTitle/LogoTitle";
 import Link from "next/link";
 
 export default function Login() {

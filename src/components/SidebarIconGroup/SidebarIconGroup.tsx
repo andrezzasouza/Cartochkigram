@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MouseOverPopover from "../MousePopover/MousePopover";
+import MouseOverPopover from "@/components/MousePopover/MousePopover";
 import styled from "styled-components";
 import Link from "next/link";
 

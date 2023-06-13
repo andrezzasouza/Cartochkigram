@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoTitle from "../LogoTitle/LogoTitle";
+import LogoTitle from "@/components/LogoTitle/LogoTitle";
 
 const SplashBackground = styled.div`
   background-color: #32476f;

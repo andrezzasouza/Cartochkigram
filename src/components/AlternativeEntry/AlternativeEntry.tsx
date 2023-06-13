@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FacebookLogo, GoogleLogo, GithubLogo } from "@phosphor-icons/react";
-import LogoButton from "../LogoButton/LogoButton";
+import LogoButton from "@/components/LogoButton/LogoButton";
 
 interface IAltEntry {
   alternativeHeading: string;

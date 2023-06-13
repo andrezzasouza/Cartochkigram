@@ -5,12 +5,12 @@ import {
   NotePencil,
   Question,
 } from "@phosphor-icons/react";
-import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
-import MoreInfo from "../MoreInfo/MoreInfo";
-import InputContainer from "../InputContainer/InputContainer";
-import FormButton from "../FormButton/FormButton";
+import AlternativeEntry from "@/components/AlternativeEntry/AlternativeEntry";
+import MoreInfo from "@/components/MoreInfo/MoreInfo";
+import InputContainer from "@/components/InputContainer/InputContainer";
+import FormButton from "@/components/FormButton/FormButton";
 import { useState, FormEvent } from "react";
-import ButtonLoading from "../../components/ButtonLoading/ButtonLoading";
+import ButtonLoading from "@/components/ButtonLoading/ButtonLoading";
 
 const EntryHeading = styled.h2`
   font-size: 32px;

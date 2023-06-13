@@ -5,7 +5,7 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import LoggedInSideHeader from "@/components/LoggedInSideHeader/LoggedInSideHeader";
 import { HouseLine } from "@phosphor-icons/react";
 import styled from "styled-components";
-import { nunito, pacifico } from "../fonts";
+import { nunito, pacifico } from "@/app/fonts";
 import { useState } from "react";
 
 export default function Dashboard() {

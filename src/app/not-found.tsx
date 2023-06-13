@@ -13,7 +13,7 @@ interface IErrorFlashcard {
 export default function NotFound() {
   return (
     <>
-      <Header>
+      <Header placement="external">
         <></>
       </Header>
       <ErrorMain>
@@ -30,13 +30,17 @@ export default function NotFound() {
           </p>
           <ButtonsArea>
             <LogoButton>
-              <Chalkboard size={28} color="#32476f" weight="duotone" />
-              <span>Aprenda algo novo</span>
+              <>
+                <Chalkboard size={28} color="#32476f" weight="duotone" />
+                <span>Aprenda algo novo</span>
+              </>
             </LogoButton>
             <Link href="/home">
               <LogoButton>
-                <HouseLine size={28} color="#32476f" weight="duotone" />
-                <span>Ir para a home</span>
+                <>
+                  <HouseLine size={28} color="#32476f" weight="duotone" />
+                  <span>Ir para a home</span>
+                </>
               </LogoButton>
             </Link>
           </ButtonsArea>

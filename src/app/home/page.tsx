@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SplashScreen from "../../components/SplashScreen/SplashScreen";
-import Header from "../../components/Header/Header";
-import LoggedInSideHeader from "../../components/LoggedInSideHeader/LoggedInSideHeader";
+import SplashScreen from "@/components/SplashScreen/SplashScreen";
+import Header from "@/components/Header/Header";
+import LoggedInSideHeader from "@/components/LoggedInSideHeader/LoggedInSideHeader";
 import { SquaresFour } from "@phosphor-icons/react";
 import Sidebar from "@/components/Sidebar/Sidebar";
 

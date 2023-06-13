@@ -2,8 +2,8 @@
 
 import ResetStyles from "@/styles/ResetStyles";
 import GlobalStyles from "@/styles/GlobalStyles";
-import StyledComponentsRegistry from "./lib/registry";
-import { nunito } from "./fonts";
+import StyledComponentsRegistry from "@/app/lib/registry";
+import { nunito } from "@/app/fonts";
 
 export default function RootLayout({
   children,

@@ -1,14 +1,11 @@
-import Popover from "@mui/material/Popover/Popover";
 import {
   BookOpenText,
   Cards,
   GameController,
   MusicNotes,
 } from "@phosphor-icons/react";
-import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
-import SidebarIconGroup from "../SidebarIconGroup/SidebarIconGroup";
+import SidebarIconGroup from "@/components/SidebarIconGroup/SidebarIconGroup";
 
 interface IIconDescription {
   open: boolean;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import AlternativeEntry from "../AlternativeEntry/AlternativeEntry";
-import MoreInfo from "../MoreInfo/MoreInfo";
-import InputContainer from "../InputContainer/InputContainer";
+import AlternativeEntry from "@/components/AlternativeEntry/AlternativeEntry";
+import MoreInfo from "@/components/MoreInfo/MoreInfo";
+import InputContainer from "@/components/InputContainer/InputContainer";
 import {
   EnvelopeOpen,
   Password,
@@ -13,10 +13,10 @@ import {
   Question,
   Student,
 } from "@phosphor-icons/react";
-import FormButton from "../FormButton/FormButton";
+import FormButton from "@/components/FormButton/FormButton";
 import { FormEvent, useState } from "react";
-import ButtonLoading from "../ButtonLoading/ButtonLoading";
-import SelectOptions from "../SelectOptions/SelectOptions";
+import ButtonLoading from "@/components/ButtonLoading/ButtonLoading";
+import SelectOptions from "@/components/SelectOptions/SelectOptions";
 
 export default function SignUpForm() {
   const [level, setLevel] = useState<string>("");

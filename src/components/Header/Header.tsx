@@ -1,24 +1,28 @@
 import { Dispatch, PropsWithChildren } from "react";
 import styled from "styled-components";
-import { pacifico } from "../../app/fonts";
-import LogoTitle from "../LogoTitle/LogoTitle";
+import { pacifico } from "@/app/fonts";
+import LogoTitle from "@/components/LogoTitle/LogoTitle";
 import { List } from "@phosphor-icons/react";
 
 interface IHeader extends PropsWithChildren {
   placement: string;
-  open: boolean;
-  setOpen: Dispatch<boolean>;
+  open?: boolean;
+  setOpen?: Dispatch<boolean>;
 }
 
 export default function Header({ children, placement, open, setOpen }: IHeader) {
   return (
     <StyledHeader className={pacifico.className} placement={placement}>
-      <ListLogo
-        size={32}
-        color="#ffffff"
-        weight="duotone"
-        onClick={() => {setOpen(!open); console.log(open)}}
-      />
+      {placement === "internal" && (
+        <ListLogo
+          size={32}
+          color="#ffffff"
+          weight="duotone"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        />
+      )}
       <LogoTitle textSize="20px" />
       {children}
     </StyledHeader>
