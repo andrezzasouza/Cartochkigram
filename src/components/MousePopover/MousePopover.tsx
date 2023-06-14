@@ -20,7 +20,7 @@ export default function MouseOverPopover({
           id="mouse-over-popover"
           sx={{
             pointerEvents: "none",
-            marginLeft: 1.5,
+            marginLeft: 2,
           }}
           open={open}
           anchorEl={anchorEl}

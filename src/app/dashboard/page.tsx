@@ -7,9 +7,14 @@ import { HouseLine } from "@phosphor-icons/react";
 import styled from "styled-components";
 import { nunito, pacifico } from "@/app/fonts";
 import { useState } from "react";
+import PaperCard from "@/components/PaperCard/PaperCard";
 
 export default function Dashboard() {
   const [open, setOpen] = useState<boolean>(false);
+
+  const info = {
+    cyrillicName: "Алёна"
+  };
 
   return (
     <DashboardContainer>
@@ -23,8 +28,15 @@ export default function Dashboard() {
       </Header>
       <DashboardMain className={nunito.className}>
         <Sidebar open={open} />
-        <h2 className={pacifico.className}>Что нового?</h2>
-        <p>Fique por dentro do que há de novo pra você!</p>
+        <PaperCard>
+          <>
+            <h2 className={pacifico.className}>
+              Что нового{info.cyrillicName ? `, ${info.cyrillicName}` : ""}?
+            </h2>
+            <p>Fique por dentro do que há de novo pra você!</p>
+          </>
+        </PaperCard>
+
         {/* grid layout */}
       </DashboardMain>
     </DashboardContainer>
@@ -32,18 +44,12 @@ export default function Dashboard() {
 }
 
 const DashboardContainer = styled.main`
-  background-color: #fafafa;
+  background-color: #e3e0e0;
   min-height: calc(100vh);
 `;
 
 const DashboardMain = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 40px 25px 15px 80px;
-
-  & > h2 {
-    color: #32476f;
-    font-size: 40px;
-    margin: 0 0 10px;
-  }
+  margin: 30px 25px 15px 80px;
 `;
