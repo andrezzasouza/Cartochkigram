@@ -1,34 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kartochkigram
 
-## Getting Started
+Kartochkigram is currently under development. It will be a platform to learn and practice the Russian language. It will be mostly based on flashcards, but it will also include basic contents on new vocabulary and grammar, song recommendations, minigames and blog posts.
 
-First, run the development server:
+## Getting Started as a Developer
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+In order to use Kartochkigram as a developer, you must follow these steps:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Have the proper development environment set up. It should have at least npm and git installed.
+- Clone or download this repository.
+- Enter the folder that contains the downloaded repository on your computer.
+- Run `npm i --legacy-peer-deps` on your terminal.
+- Run `npm run dev` on your terminal.
+- Click on [http://localhost:3000](http://localhost:3000) in your terminal to view the webpage on your browser.
+- Run `code .` to open the code on Visual Studio Code.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project To-do
+### Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### LP
+- [ ] Customize the carousel
+- [ ] Create its layout
 
-## Learn More
+#### Home
+- [ ] Create its layout
 
-To learn more about Next.js, take a look at the following resources:
+#### Dashboard
+- [ ] Create its layout
+- [ ] Choose relevant cards to display
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Login
+- [ ] Solve input:-internal-autofill-selected problem
+- [ ] Validate fields
+- [ ] Customize error behavior
+- [ ] Connect to back-end
+- [ ] Connect to AuthContext
+- [ ] Make it resposive
+- [ ] Add media queries
+- [ ] Save data in LocalStorage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Signup
+- [ ] Solve input:-internal-autofill-selected problem
+- [ ] Validate fields
+- [ ] Customize error behavior
+- [ ] Connect to back-end
+- [ ] Configure redirect to Login
 
-## Deploy on Vercel
+#### Not-Found
+- [ ] Understand "error Error: React.Children.only expected to receive a single React element child."
+- [ ] Fix React.Children.only error
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Components
+
+#### SplashScreen
+- [ ] Configure loading animation
+
+
+### Etc
+- [ ] Create a custom modal
+
+#### Usage
+- [ ] Create and useContext
+- [ ] Deal with SSR on LP and Blog pages
+- [ ] Think of additional functionalities
+- [ ] Prepare contents
+
+#### Clean Coding
+- [ ] Update project architecture
+- [ ] Separate styles into their own files
+- [ ] Organize useful arrays and objects into their own files
+
+#### Configs
+- [ ] Configure Prettier
+- [ ] Configure ESLint
+- [ ] Configure Husky
+- [ ] Configure Docker

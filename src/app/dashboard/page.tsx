@@ -36,8 +36,6 @@ export default function Dashboard() {
             <p>Fique por dentro do que há de novo pra você!</p>
           </>
         </PaperCard>
-
-        {/* grid layout */}
       </DashboardMain>
     </DashboardContainer>
   );
