@@ -5,7 +5,6 @@ import FormContainer from "@/components/FormContainer/FormContainer";
 import LoginForm from "@/components/LogInForm/LogInForm";
 import LogoTitle from "@/components/LogoTitle/LogoTitle";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Login() {
   return (
@@ -43,7 +42,7 @@ const LoginPage = styled.main`
   }
 `;
 
-const LoginImage = styled(Image)`
+const LoginImage = styled.img`
   width: 715px;
   border-radius: 20px 20px 0 20px;
   margin: 50px 0 30px;

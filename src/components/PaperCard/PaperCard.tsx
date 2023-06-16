@@ -9,7 +9,7 @@ const StyledPaper = styled(Paper)`
   padding: 30px;
   width: fit-content;
   
-  & > h2 {
+  & h2 {
     color: #32476f;
     font-size: 40px;
     margin: 0 0 20px;

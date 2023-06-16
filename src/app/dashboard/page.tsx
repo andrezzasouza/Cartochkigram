@@ -8,12 +8,14 @@ import styled from "styled-components";
 import { nunito, pacifico } from "@/app/fonts";
 import { useState } from "react";
 import PaperCard from "@/components/PaperCard/PaperCard";
+import GridLayout from "@/components/GridLayout/GridLayout";
+import Grid from "@mui/material/Grid";
 
 export default function Dashboard() {
   const [open, setOpen] = useState<boolean>(false);
 
   const info = {
-    cyrillicName: "Алёна"
+    cyrillicName: "Алёна",
   };
 
   return (
@@ -28,14 +30,16 @@ export default function Dashboard() {
       </Header>
       <DashboardMain className={nunito.className}>
         <Sidebar open={open} />
-        <PaperCard>
-          <>
-            <h2 className={pacifico.className}>
-              Что нового{info.cyrillicName ? `, ${info.cyrillicName}` : ""}?
-            </h2>
-            <p>Fique por dentro do que há de novo pra você!</p>
-          </>
-        </PaperCard>
+        <GridLayout>
+          <PaperCard>
+            <Grid item xs={12}>
+              <h2 className={pacifico.className}>
+                Что нового{info.cyrillicName ? `, ${info.cyrillicName}` : ""}?
+              </h2>
+              <p>Fique por dentro do que há de novo pra você!</p>
+            </Grid>
+          </PaperCard>
+        </GridLayout>
       </DashboardMain>
     </DashboardContainer>
   );
@@ -43,11 +47,13 @@ export default function Dashboard() {
 
 const DashboardContainer = styled.main`
   background-color: #e3e0e0;
+
   min-height: calc(100vh);
 `;
 
 const DashboardMain = styled.main`
   display: flex;
   flex-direction: column;
+  padding: 20px 30px;
   margin: 30px 25px 15px 80px;
 `;
