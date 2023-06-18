@@ -1,13 +1,11 @@
 "use client";
 
 import Header from "@/components/Header/Header";
-import { useState } from "react";
 
 export default function Blog() {
-  const [open, setOpen] = useState<boolean>(false);
   return (
     <>
-      <Header placement="internal" open={open} setOpen={setOpen}>
+      <Header placement="external">
         <div></div>
       </Header>
     </>

@@ -9,7 +9,6 @@ import { nunito, pacifico } from "@/app/fonts";
 import { useState } from "react";
 import PaperCard from "@/components/PaperCard/PaperCard";
 import GridLayout from "@/components/GridLayout/GridLayout";
-import Grid from "@mui/material/Grid";
 
 export default function Dashboard() {
   const [open, setOpen] = useState<boolean>(false);
@@ -19,7 +18,7 @@ export default function Dashboard() {
   };
 
   return (
-    <DashboardContainer>
+    <DashboardMain>
       <Header placement="internal" open={open} setOpen={setOpen}>
         <>
           <LoggedInSideHeader
@@ -28,32 +27,39 @@ export default function Dashboard() {
           />
         </>
       </Header>
-      <DashboardMain className={nunito.className}>
+      <DashboardContainer className={nunito.className}>
         <Sidebar open={open} />
         <GridLayout>
-          <PaperCard>
-            <Grid item xs={12}>
-              <h2 className={pacifico.className}>
-                Что нового{info.cyrillicName ? `, ${info.cyrillicName}` : ""}?
-              </h2>
-              <p>Fique por dentro do que há de novo pra você!</p>
-            </Grid>
+          <PaperCard xs={4}>
+            <h2 className={pacifico.className}>
+              Что нового{info.cyrillicName ? `, ${info.cyrillicName}` : ""}?
+            </h2>
+            <p>
+              Fique por dentro do que há de novo pra você aqui no dashboard!
+            </p>
+          </PaperCard>
+          <PaperCard xs={4}>
+            <h2 className={pacifico.className}>С днём рождения!</h2>
+            <p>Hoje é seu aniversário! Aproveite bastante o seu dia!</p>
+          </PaperCard>
+          <PaperCard xs={4}>
+            <h2 className={pacifico.className}>Сегодня, где вы?</h2>
+            <p>Aprenda algo novo em russo sobre o lugar em que você está!</p>
           </PaperCard>
         </GridLayout>
-      </DashboardMain>
-    </DashboardContainer>
+      </DashboardContainer>
+    </DashboardMain>
   );
 }
 
-const DashboardContainer = styled.main`
+const DashboardMain = styled.main`
   background-color: #e3e0e0;
-
   min-height: calc(100vh);
 `;
 
-const DashboardMain = styled.main`
+const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
-  margin: 30px 25px 15px 80px;
+  margin: 20px 25px 15px 65px;
 `;
