@@ -10,7 +10,7 @@ import LoggedInSideHeader from "@/components/LoggedInSideHeader/LoggedInSideHead
 import { HouseLine } from "@phosphor-icons/react";
 import { pacifico } from "../fonts";
 
-const TopicCardsContents = [
+const topicCardsContents = [
   {
     title: "Letras do Alfabeto",
     tag: ["Letras"],
@@ -72,17 +72,17 @@ export default function Flashcards() {
         <>
           <h2 className={pacifico.className}>Módulo 1: Primeiras palavras</h2>
           <GridLayout>
-            {TopicCardsContents.map((card, index) => (
+            {topicCardsContents.map((card, index) => (
               <FlashcardTopicCard
                 xs={2.4}
                 key={`topic-card-${card.link}`}
                 link={card.link}
               >
-                <div>
+                <TagContainer>
                   {card.tag.map((tag, index) => (
                     <div key={`topic-tag-${index}`}>{tag}</div>
                   ))}
-                </div>
+                </TagContainer>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
               </FlashcardTopicCard>
@@ -109,5 +109,21 @@ const FlashCardMenuContainer = styled.div`
     font-size: 24px;
     margin: 0 0 20px;
     color: #32476f;
+  }
+`;
+
+const TagContainer = styled.div`
+  display: flex;
+    gap: 4px;
+
+  & > div {
+    background-color: #a73e3e;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 2px 4px;
+    margin: 0 0 10px;
   }
 `;
