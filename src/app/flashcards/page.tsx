@@ -13,14 +13,47 @@ import { pacifico } from "../fonts";
 const TopicCardsContents = [
   {
     title: "Letras do Alfabeto",
-    tag: "",
+    tag: ["Letras"],
     description: "Pratique as letras do alfabeto!",
     link: "/flashcard/item/1",
   },
   {
     title: "Vogais e consoantes",
-    tag: "",
+    tag: ["Letras"],
     description: "Teste seus conhecimentos de vogais e consoates em russo!",
+    link: "/flashcard/item/1",
+  },
+  {
+    title: "Regras de leitura",
+    tag: ["Letras", "Pronúncia"],
+    description: "Relembre as regras de leitura da língua russa!",
+    link: "/flashcard/item/1",
+  },
+  {
+    title: "Letras cursivas sozinhas",
+    tag: ["Letras"],
+    description:
+      "Memorize como as letras cursivas são escritas quando aparecem sozinhas!",
+    link: "/flashcard/item/1",
+  },
+  {
+    title: "Letras cursivas acompanhadas",
+    tag: ["Letras"],
+    description:
+      "Agora, vamos ver como as letras cursivas se ligam uma às outras.",
+    link: "/flashcard/item/1",
+  },
+  {
+    title: "Primeiras palavras e frases",
+    tag: ["Vocabulário"],
+    description: "Aprenda o básico para você começar a falar russo!",
+    link: "/flashcard/item/1",
+  },
+  {
+    title: "Se apresentando em russo",
+    tag: ["Vocabulário"],
+    description: "Se apresente e apresente outras pessoas.",
+    link: "/flashcard/item/1",
   },
 ];
 
@@ -40,8 +73,16 @@ export default function Flashcards() {
           <h2 className={pacifico.className}>Módulo 1: Primeiras palavras</h2>
           <GridLayout>
             {TopicCardsContents.map((card, index) => (
-              <FlashcardTopicCard xs={2} key={`topic-card-${index}`}>
-                <div></div>
+              <FlashcardTopicCard
+                xs={2.4}
+                key={`topic-card-${card.link}`}
+                link={card.link}
+              >
+                <div>
+                  {card.tag.map((tag, index) => (
+                    <div key={`topic-tag-${index}`}>{tag}</div>
+                  ))}
+                </div>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
               </FlashcardTopicCard>
