@@ -7,29 +7,33 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import { useState } from "react";
 import styled from "styled-components";
 import { CardActions, Button, CardMedia, CardContent } from "@mui/material";
-import forca from "@/assets/images/forca.jpg";
+import hangman from "@/assets/images/hangman.jpg";
 import wordle from "@/assets/images/wordle.png";
+import crosswords from "@/assets/images/crosswords.png";
 import { GameController, PaperPlaneTilt } from "@phosphor-icons/react";
 import { pacifico } from "../fonts";
-
-console.log(forca);
 
 const gameList = [
   {
     title: "Виселица",
-    description:
-      "Jogue forca em russo para se divertir e fixar o vocabulário aprendido!",
-    image: forca?.src,
+    description: "Jogue forca em russo e se divirta aprendendo!",
+    image: hangman?.src,
     alt: "Imagem de  uma forca",
     link: "/games/viselitsa",
   },
   {
     title: "Вордли",
-    description:
-      "Jogue a versão em russo do jogo Termoo para praticar seu vocabulário!",
+    description: "Jogue a versão em russo do jogo Termoo!",
     image: wordle?.src,
     alt: "Image da versão em russo do jogo Termoo",
     link: "/games/wordli",
+  },
+  {
+    title: "Филворды",
+    description: "Jogue a versão do jogo de caçar palavras em russo!",
+    image: crosswords?.src,
+    alt: "Image da versão em russo do jogo de caça palavras",
+    link: "/games/filvordy",
   },
 ];
 
