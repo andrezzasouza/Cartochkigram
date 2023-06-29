@@ -1,5 +1,5 @@
 import { Carousel } from "react-responsive-carousel";
-import "@/assets/styles/carousel.css";
+import "@/styles/carousel.css";
 import img1 from "@/assets/images/brandi-redd-aJTiW00qqtI-unsplash.jpg";
 import img4 from "@/assets/images/kate-trysh-WX5jK0BT5JQ-unsplash.jpg";
 import img5 from "@/assets/images/kelly-sikkema-0iKjge_aOVo-unsplash.jpg";

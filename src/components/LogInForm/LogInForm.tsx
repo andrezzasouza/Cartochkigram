@@ -1,47 +1,16 @@
-import styled from "styled-components";
 import {
   EnvelopeOpen,
   Password,
   NotePencil,
   Question,
 } from "@phosphor-icons/react";
+import { EntryHeading, ResetPwd, ResetContainer, Description } from "./layout";
 import AlternativeEntry from "@/components/AlternativeEntry/AlternativeEntry";
 import MoreInfo from "@/components/MoreInfo/MoreInfo";
 import InputContainer from "@/components/InputContainer/InputContainer";
 import FormButton from "@/components/FormButton/FormButton";
 import { useState, FormEvent } from "react";
 import ButtonLoading from "@/components/ButtonLoading/ButtonLoading";
-
-const EntryHeading = styled.h2`
-  font-size: 32px;
-  margin: 30px 0 15px;
-  color: #32476f;
-  font-weight: 800;
-`;
-
-const ResetPwd = styled.span`
-  margin-top: 5px;
-  font-size: 13px;
-  color: #6088d2;
-  width: fit-content;
-  text-align: center;
-
-  &:hover {
-    color: #32476f;
-    cursor: pointer;
-  }
-`;
-
-const ResetContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Description = styled.h3`
-  margin: 15px 0 20px;
-  font-weight: 700;
-  font-size: 17px;
-`;
 
 const itemsArray = [
   {
@@ -88,13 +57,6 @@ export default function LogInForm() {
       password,
     };
     alert("Login");
-  }
-
-  function checkLogInData() {
-    // check e-mail format
-    if (password.length < 8) {
-      alert("Sua senha deve ter pelo menos 8 caracteres!");
-    }
   }
 
   return (
